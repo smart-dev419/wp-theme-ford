@@ -1,0 +1,76 @@
+@import "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i";
+@import "bootstrap";
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+  );
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+
+@import "bootstrap-custom";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+// devices viewport width starts at:
+$breakpoints: (
+  xs-phone: 320px,
+  phone: 480px,
+  tablet: $screen-sm,
+  desktop: $screen-md,
+  large-desktop: 1200px,
+  widescreen: $screen-lg,
+  );
+
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/icomoon';
+@import 'base/slick';
+@import 'base/fonts';
+@import 'base/typography';
+
+@import 'layout/common';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'pages/home';
+@import 'pages/blog-feature';
+@import 'pages/blog-landing';
+@import 'pages/golf-landing';
+@import 'pages/real-estate-listings';
+@import 'pages/real-estate-listings-detail';
+@import 'pages/contact';
+
+.container {
+  @include media ('>=desktop' , '<widescreen') {
+    width: auto;
+    max-width: 1200px;
+  }
+
+  @include media('<tablet') {
+    padding: 0 10px;
+  }
+}
+
+.row {
+
+  @include media('<tablet') {
+    margin: 0 -10px;
+  }
+}
+
+[class*="col-"],
+[class^="col-"] {
+
+  @include media('<tablet') {
+    padding: 0 10px;
+  }
+}

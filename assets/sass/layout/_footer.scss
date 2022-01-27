@@ -1,0 +1,246 @@
+.blocks-wrap.footer-block-wrap {
+  padding-top: 60px;
+
+  @include media('<desktop') {
+    padding-top: 30px;
+  }
+
+  .top-block {
+    padding: 0;
+
+    @include media('<desktop') {
+      padding: 12px;
+    }
+  }
+}
+
+#footer {
+  padding-top: 65px;
+  padding-bottom: 27px;
+
+  @include media('<tablet') {
+    padding: 20px 39px;
+  }
+
+  > .container {
+    position: relative;
+  }
+
+  .search-holder {
+    margin-bottom: 25px;
+
+    @include media('<tablet') {
+      margin: 7px 0 23px;
+    }
+
+    .search-form {
+      @include media('<desktop') {
+        width: 100%;
+      }
+
+      input[type="search"] {
+
+        @include media('<tablet') {
+          height: 28px;
+          padding: 6px 10px;
+        }
+      }
+
+      button[type="submit"] {
+        font-size: 15px;
+        right: 16px;
+      }
+    }
+  }
+
+  .tbl {
+    display: table;
+    width: 100%;
+    height: 216px;
+
+    @include media('<desktop') {
+      height: 180px;
+    }
+
+    @include media('<tablet') {
+      height: auto;
+    }
+
+    .tfg {
+      display: table-footer-group;
+      height: 1%;
+
+      @include media('<tablet') {
+        display: block;
+      }
+    }
+  }
+}
+
+.social-networks {
+  @extend %listreset;
+  letter-spacing: -5px;
+
+  @include media('<tablet') {
+    margin: 0 -10px 30px;
+    text-align: center;
+    display: table-footer-group;
+    height: 1%;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 0;
+    margin: 0 31px 20px 0;
+
+    @include media('<large-desktop') {
+      margin: 0 20px 20px 0;
+    }
+
+    @include media('<desktop') {
+      margin: 0 12px 20px 0;
+    }
+
+    @include media('<tablet') {
+      padding: 0 10px;
+      margin: 0 0 10px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: block;
+      font-size: 36px;
+
+      @include media('<tablet') {
+        font-size: 26px;
+      }
+    }
+
+    &.f-logo {
+      margin: -13px 0 0 -15px;
+
+      @include media('<desktop') {
+        margin-left: 0;
+      }
+
+      @include media('<tablet') {
+        margin: 0;
+        display: none;
+      }
+    }
+  }
+}
+
+.footer-logo {
+  @include vertical-align-x;
+  width: 272px;
+  z-index: 100;
+
+  @include media('<desktop') {
+    width: 136px;
+    margin-left: -14px;
+  }
+
+  @include media('<tablet') {
+    position: static;
+    transform: none;
+    width: 161px;
+    margin: 0 auto 36px;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.footer-nav {
+  @extend %clearfix;
+  @extend %listreset;
+  padding-top: 20px;
+
+  @include media('<tablet') {
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 18px;
+    padding-top: 0;
+  }
+
+  li {
+    float: left;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 4px 15px 4px 0;
+    letter-spacing: 1.2px;
+
+    @include media('<widescreen') {
+      margin: 4px 12px 4px 0;
+      font-size: 14px;
+    }
+
+    @include media('<large-desktop') {
+      margin: 0 15px 10px 0;
+    }
+
+    @include media('<tablet') {
+      font-size: 16px;
+      float: none;
+      display: block;
+      vertical-align: top;
+      margin: 0 0 6px;
+      padding: 0 4px;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: $black;
+
+      &:hover,
+      &:focus {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.re-snipe-block {
+  max-width: 540px;
+  float: right;
+  font: 10px/14px 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+  color: $black;
+  position: relative;
+  padding-left: 49px;
+
+  @include media('<tablet') {
+    padding-left: 35px;
+  }
+
+  address {
+    margin-bottom: 8px;
+    font: 10px/14px 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+  }
+
+  .img-wrap {
+    @include vertical-align-y;
+    left: 0;
+
+    @include media('<tablet') {
+      top: 4px;
+      transform: none;
+      width: 30px;
+    }
+  }
+
+  .text-wrap {
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

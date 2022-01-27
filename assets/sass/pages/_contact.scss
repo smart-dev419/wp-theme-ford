@@ -1,0 +1,297 @@
+.contact-form-holder {
+  background: #eaeaea;
+  padding: 32px 0;
+
+  .title {
+    display: block;
+    font-size: 48px;
+    line-height: 1;
+    font-style: italic;
+    color: #828f55;
+  }
+
+  .title-wrap {
+    min-height: 82px;
+    width: 50%;
+
+    @include media('<tablet') {
+      width: 100%;
+    }
+  }
+
+  .input-field {
+    margin: 0 -15px;
+    letter-spacing: -5px;
+  }
+
+  .input-wrap {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 82px;
+    padding: 0 15px;
+    letter-spacing: 0;
+
+    @include media('<tablet') {
+      width: 100%;
+    }
+
+    &:nth-child(even) {
+      margin-top: -82px;
+
+      @include media('<tablet') {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child:nth-child(odd) {
+      float: right;
+      margin-top: -82px;
+
+      @include media('<tablet') {
+        float: none;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    display: block;
+    width: 100%;
+    border: none;
+    box-shadow:  inset 2px 3px 7px rgba(0,0,0,.07);
+    height: 44px;
+    padding: 8px 12px;
+    font: 16px/18px $base-font-family;
+    color: $black;
+    font-style: italic;
+  }
+
+  .error {
+    textarea,
+    select,
+    .nice-select,
+    input {
+      border: 1px solid red;
+    }
+  }
+
+  input[type="submit"] {
+    border: 2px solid #63732b;
+    background: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #63732b;
+    border-radius: 2px;
+    min-width: 302px;
+
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    font-size: 20px;
+    line-height: 22px;
+    padding: 14px;
+    letter-spacing: 2px;
+  }  
+
+  @include placeholder {color: #ccc;}
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    line-height: 1;
+    color: #828f55;
+    font-weight: 400;
+  }
+
+  .textarea-wrap {
+    margin-bottom: 14px;
+
+    label {
+      margin-bottom: 9px;
+    }
+  }
+
+  textarea {
+    width: 100% !important;
+    min-height: 284px;
+    height: 284px;
+
+    @include media('<tablet') {
+      height: 180px;
+      min-height: 180px;
+    }
+  }
+
+  .select-row {
+    margin: 0 -15px;
+    letter-spacing: -5px;
+
+    .select-col {
+      padding: 0 15px 15px;
+      display: inline-block;
+      vertical-align: top;
+      letter-spacing: 0;
+      width: 50%;
+
+      @include media('<tablet') {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.map-wrap {
+
+}
+
+
+#map {
+  height: 645px;
+  vertical-align: top;
+  width: 100%;
+  @include media('<tablet') {
+    height: 400px;
+  }
+
+  .infoBox {
+    h5 {
+      font-size: 23px;
+    }
+  }
+}
+
+.download-area {
+  display: flex;
+  margin-top: 40px;
+
+  @include media('<tablet') {
+    display: block;
+  }
+
+  .download-list {
+    width: 32.726%;
+
+    @include media('<tablet') {
+      width: 100%;
+    }
+
+    .holder {
+      width: 505px;
+      float: right;
+      padding: 29px 30px 13px 15px;
+
+      @include media('<widescreen') {
+        width: 100%;
+      }
+
+      @include media('<desktop') {
+        padding: 10px 15px;
+      }
+
+      @include media('<tablet') {
+        float: none;
+      }
+    }
+
+    .title {
+      display: block;
+      font: 30px/1.067 $magnel-font;
+    }
+
+    .list {
+      @extend %listreset;
+      font-size: 30px;
+      line-height: 1.067;
+      text-transform: capitalize;
+
+      @include media('<large-desktop') {
+        font-size: 19px;
+      }
+
+      li {
+        border-bottom: 1px solid $black;
+
+        a {
+          color: $black;
+          display: block;
+          padding: 12px 40px 12px 0;
+          position: relative;
+
+          &:focus,
+          &:hover {
+            color: $link-color;
+          }
+
+          &:after {
+            @include vertical-align-y;
+            content: "\e909";
+            font: 34px/1 "icomoon";
+            right: 3px;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      @extend %listreset;
+      letter-spacing: -5px;
+      text-align: right;
+      font: 20px/1 $base-font-family;
+      padding: 14px 0;
+
+      li {
+        letter-spacing: 0;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+        color: #25aaff;
+        border-bottom: 2px solid transparent;
+
+        &.active a {
+          border-color: #25aaff;
+          font-weight: 700;
+        }
+
+        a {
+          color: #25aaff;
+          border-bottom: 2px solid transparent;
+
+          &:hover {
+            border-color: #25aaff;
+          }
+        }
+      }
+    }
+  }
+
+  .img-holder {
+    width: 67.274%;
+    display: flex;
+    position: relative;
+
+    @include media('<tablet') {
+      display: block;
+      width: 100%;
+      padding-top: 50%;
+      position: relative;
+    }
+  }
+
+  .img-wrap {
+    width: 100%;
+    position: absolute;
+    top: 0;;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+#map_canvas {
+  width: 100% !important;
+}

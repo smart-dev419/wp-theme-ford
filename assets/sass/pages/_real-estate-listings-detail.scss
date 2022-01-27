@@ -1,0 +1,695 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21px;
+  position: relative;
+
+  @include media('<desktop') {
+    display: block;
+  }
+
+  address {
+    margin: 0;
+    font-size: 72px;
+    line-height: 1;
+    font-style: italic;
+    color: $crete;
+
+    @include media('<desktop') {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+    @include media('<tablet') {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .content-r {
+    text-align: right;
+    letter-spacing: -5px;
+    color: $crete;
+
+    @include media('<desktop') {
+      text-align: left;
+    }
+
+    .feature-list {
+      display: inline-block;
+      vertical-align: middle;
+      @extend %listreset;
+      letter-spacing: -5px;
+      text-align: center;
+
+      @include media('<tablet') {
+        margin: 0 -5px;
+      }
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        letter-spacing: 0;
+        background: #fff6e5;
+        padding: 8px;
+        margin: 0 8px;
+        color: $crete;
+        min-width: 46px;
+
+        @include media('<tablet') {
+          padding: 0 5px;
+          min-width: 29px;
+        }
+
+        span {
+          display: block;
+          font-size: 31px;
+          line-height: 1;
+
+          @include media('<tablet') {
+            font-size: 20px;
+          }
+        }
+
+        em {
+          display: block;
+          font-size: 10px;
+          line-height: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-style: normal;
+
+          @include media('<tablet') {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    .price {
+      letter-spacing: 0;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 86px 0 76px;
+      font-size: 33px;
+      line-height: 1;
+      font-style: italic;
+
+      @include media('<large-desktop') {
+        padding: 0 30px;
+      }
+
+      @include media('<tablet') {
+        font-size: 28px;
+        padding: 0;
+        float: right;
+      }
+    }
+
+    .star {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 45px;
+      margin-right: 4px;
+      margin: 18px 4px 0 0;
+
+      @include media('<desktop') {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 0;
+      }
+
+      @include media('<tablet') {
+        font-size: 30px;
+        margin: 4px 3px 0 0;
+      }
+    }
+  }
+}
+
+.slide-container {
+  margin-bottom: 42px;
+
+  @include media('<tablet') {
+    margin-bottom: 20px;
+  }
+}
+
+.slideshow {
+  margin-bottom: 50px;
+
+  @include media('<tablet') {
+    margin: 0 -10px 21px;
+  }
+
+  .slide {
+
+    @include media('<tablet') {
+      overflow: hidden;
+    }
+  }
+
+  .img-wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+    min-width: 1530px;
+    width: 100%;
+
+    @include media('<widescreen') {
+      min-width: 800px;
+    }
+
+    @include media('<tablet') {
+      min-width: 579px;
+    }
+  }
+
+  img {
+    float: left;
+    width: 100%;
+    position: relative;
+    left: -50%;
+  }
+
+  .slick-arrow {
+
+    @include media('<tablet') {
+      width: 36px;
+      height: 36px;
+    }
+
+    &:before {
+
+      @include media('<tablet') {
+        font-size: 36px;
+      }
+    }
+
+    @include media('<tablet') {
+      left: 22px;
+    }
+
+    &.slick-next {
+
+      @include media('<tablet') {
+        right: 22px;
+        left: auto;
+      }
+    }
+  }
+}
+
+.detail-block {
+  overflow: hidden;
+  margin-bottom: 70px;
+
+  @include media('<tablet') {
+    margin-bottom: 12px;
+    padding-top: 26px;
+    overflow: visible;
+  }
+
+  .description-block {
+    margin-bottom: 50px;
+
+    @include media('<tablet') {
+      margin-bottom: 16px;
+    }
+
+    strong {
+      font-weight: 700;
+      font-style: italic;
+    }
+  }
+}
+
+.slider-nav {
+  margin: 0 -15px;
+
+  @include media('<tablet') {
+    display: none;
+  }
+
+  .slick-list {
+    padding: 0 !important;
+  }
+
+  .img-wrap {
+    padding: 0 15px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.slick-arrow {
+  @include vertical-align-y;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0;
+  width: 75px;
+  height: 75px;
+  padding: 0;
+  left: 42px;
+  z-index: 100;
+
+  @include media('<desktop') {
+    width: 46px;
+    height: 46px;
+    left: 30px;
+  }
+
+  &:before {
+    @extend %transition;
+    @include vertical-align-xy;
+    content: "\e90e";
+    font: 75px/1 "icomoon";
+    color: $white;
+
+    @include media('<desktop') {
+      font-size: 46px;
+    }
+  }
+
+  &:hover:before {
+    color: $link-color;
+  }
+
+  &.slick-next {
+    left: auto;
+    right: 42px;
+
+    @include media('<desktop') {
+      right: 30px;
+    }
+
+    &:before {
+      content: "\e908";
+    }
+  }
+}
+
+.description-block {
+  color: $crete;
+  font-size: 30px;
+  line-height: 1;
+
+  @include media('<tablet') {
+    font-size: 18px;
+  }
+
+  .note {
+    display: block;
+    font-size: 18px;
+    line-height: 1.667;
+    font-style: italic;
+
+    @include media('<tablet') {
+      font-size: 10px;
+      line-height: 1;
+    }
+  }
+
+  p {
+    margin-bottom: 22px;
+
+    @include media('<tablet') {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.detail-tags {
+  margin-bottom: 66px;
+
+  @include media('<tablet') {
+    margin-bottom: 9px;
+  }
+
+  .title {
+    display: block;
+    font: 700 24px/1 $base-font-family;
+    color: $crete;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+
+    @include media('<tablet') {
+      font-size: 15px;
+    }
+  }
+
+  .tab-list-holder {
+    letter-spacing: -5px;
+    margin: 0 -15px;
+
+    @include media('<desktop') {
+      margin: 0 -15px;
+    }
+
+    @include media('<tablet') {
+      margin: 0 -9px;
+    }
+  }
+
+  ul {
+    display: inline-block;
+    vertical-align: top;
+    @extend %listreset;
+    width: 33.33%;
+    letter-spacing: -5px;
+
+    @include media('<desktop') {
+      width: 100%;
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      letter-spacing: 0;
+      width: 50%;
+      font-size: 24px;
+      line-height: 1.25;
+      padding: 0 15px;
+      margin-bottom: 9px;
+
+      @include media('<widescreen') {
+        font-size: 18px;
+      }
+
+      @include media('<tablet') {
+        padding: 0 9px;
+        font-size: 14px;
+      }
+
+      .tag-item-wrap {
+        padding: 6px 14px;
+
+        @include media('<tablet') {
+          padding: 3px 9px;
+        }
+      }
+
+      .tag-title {
+        font-weight: 700;
+      }
+
+      &:last-child .tag-item-wrap,
+      &:first-child .tag-item-wrap{
+        background: #fff6e5;
+      }
+    }
+  }
+}
+
+.map-wrap {
+
+  .map-bar {
+    background: #828f55;
+    display: flex;
+    padding: 18px 25px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media('<tablet') {
+      padding: 1px 13px 1px 8px;
+    }
+
+    .address-info {
+      font-size: 30px;
+      font-weight: 700;
+      font-style: italic;
+      color: $white;
+
+      @include media('<tablet') {
+        font-size: 12px;
+      }
+    }
+
+    ul {
+      @extend %listreset;
+      letter-spacing: -5px;
+      margin: 0 -15px;
+
+      @include media('<tablet') {
+        margin: 0 -5px;
+      }
+
+      li {
+        letter-spacing: 0;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 15px;
+
+        @include media('<tablet') {
+          padding: 0 5px;
+        }
+
+        a {
+          color: $white;
+
+          &.icon-share {
+            font-size: 32px;
+
+            @include media('<tablet') {
+              font-size: 10px;
+            }
+          }
+
+          &.icon-large {
+            font-size: 32px;
+
+            @include media('<tablet') {
+              font-size: 13px;
+            }
+          }
+
+          &:hover,
+          &:focus {
+            color: #fff6e5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.similar-listings-block {
+  margin-bottom: 67px;
+  overflow: hidden;
+
+  @include media('<tablet') {
+    margin-bottom: 0;
+  }
+
+  .title {
+    display: block;
+    font: 700 24px/1 $base-font-family;
+    color: $crete;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+    @include media('<tablet') {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .slider-container {
+    margin: 0 -15px;
+  }
+
+  .slide-content {
+    padding: 0 15px 15px;
+  }
+
+  .slick-arrow {
+    transform: none;
+    top: 31%;
+
+    @include media('<tablet') {
+      top: 27%;
+    }
+  }
+}
+
+.inquiry-form-holder {
+  background: #828f55;
+  padding: 26px 9999px 18px;
+  margin: 0 -9999px;
+
+  @include media('<tablet') {
+    padding-top: 17px;
+    margin-bottom: 12px;
+  }
+
+  .title {
+    display: block;
+    font: 700 24px/1 $base-font-family;
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+    @include media('<tablet') {
+      font-size: 15px;
+      margin-bottom: 21px;
+    }
+  }
+
+  .inquiry-form{
+    @extend %clearfix;
+    letter-spacing: -5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    @include media('<tablet') {
+      display: block;
+      padding-bottom: 24px;
+    }
+
+    .content-left {
+      width: 59.4%;
+      letter-spacing: 0;
+
+      @include media('<tablet') {
+        height: auto !important;
+        width: 100%;
+      }
+    }
+
+    .content-right {
+      width: 43%;
+      letter-spacing: 0;
+
+      @include media('<tablet') {
+        height: auto !important;
+        width: 100%;
+      }
+    }
+
+    .column-r {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 34.05%;
+
+      @include media('<tablet') {
+        position: static;
+        width: 100%;
+      }
+    }
+
+    .text {
+      width: 20%;
+      letter-spacing: 0;
+    }
+
+    .input-row {
+      margin: 0 -65px;
+      letter-spacing: -5px;
+
+      @include media('<desktop') {
+        margin: 0 -15px;
+      }
+    }
+
+    .input-col {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 65px 38px;
+      letter-spacing: 0;
+      width: 100%;
+
+      @include media('<desktop') {
+        padding: 0 15px 22px;
+      }
+
+      &.half {
+        width: 50%;
+
+        @include media('<tablet') {
+          width: 100%;
+        }
+      }
+    }
+
+    .submit-wrap {
+      margin-top: -21px;
+
+      @include media('<desktop') {
+        margin-top: 0;
+      }
+
+      @include media('<tablet') {
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    textarea,
+    input[type="tel"],
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      height: 43px;
+      background: $white;
+      box-shadow: inset 2px 3px 7px rgba(0,0,0,.07);
+      font: italic 20px/24px $lato-font;
+      color: $black;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 8px 13px;
+
+      @include media('<tablet') {
+        height: 33px;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 8px;
+      }
+    }
+
+    textarea {
+      width: 100% !important;
+      height: 184px;
+      min-height: 184px;
+
+      @include media('<tablet') {
+        min-height: 117px;
+        height: 117px;
+      }
+    }
+
+    input[type="submit"] {
+      @extend %transition;
+      background: #697933;
+      border: none;
+      outline: none;
+      font: 700 16px/1 $base-font-family;
+      color: $white;
+      text-transform: uppercase;
+      padding: 20px 30px;
+
+      @include media('<tablet') {
+        height: 36px;
+        font-size: 11px;
+        padding: 10px 20px;
+      }
+
+      &:hover,
+      &:focus {
+        background: darken(#697933, 10%);
+      }
+    }
+
+    @include placeholder {color: #929292;}
+  }
+}

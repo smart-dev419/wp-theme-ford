@@ -1,0 +1,46 @@
+// custom variables and override bootstrap variables
+
+// Colors
+$white: #fff;
+$black: #050505;
+$alabaster: #f7f7f7;
+$brandy-punch: #d4772b;
+$scarpa-flow: #4d4959;
+$crete: #63732b;
+$iron: #d3d7d9;
+$zest: #df8c2b;
+$black-haze: #ebecec;
+$gallery: #ededed;
+
+// Scaffolding
+$body-bg: $white;
+$text-color: $black;
+$link-color: $brandy-punch;
+
+// Typography
+$font-size-base: 18px;
+$line-height-base: 1.222;
+$font-size-h1: 72px;
+$font-size-h2: 49px;
+$font-size-h3: 30px;
+$base-font-family: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$mr-eaves-sans-font: 'mr-eaves-sans', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$magnel-font: 'Magnel', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$lato-font: 'Lato', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+
+// Buttons
+$btn-default-bg: $crete;
+$btn-default-color: $white;
+
+// Components
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+// Grid system
+$grid-gutter-width: 30px;
+
+// Container sizes
+$container-large-desktop: (1530px + $grid-gutter-width);
+
+// Media queries breakpoints
+$screen-lg: 1560px;

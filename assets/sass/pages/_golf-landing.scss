@@ -1,0 +1,250 @@
+.logos-list {
+  @extend %listreset;
+  letter-spacing: -5px;
+  margin: 0 -20px;
+
+  @include media('<tablet') {
+    margin: 0 -9px;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 0;
+    padding: 0 20px 20px;
+
+    @include media('<tablet') {
+      padding: 0 6px 9px;
+      width: 25%;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+    }
+  }
+}
+
+.module-flyover-block {
+  position: relative;
+  margin: -48px 0 46px;
+  overflow: hidden;
+
+  @include media('<desktop') {
+    height: auto !important;
+  }
+
+  @include media('<tablet') {
+    margin: 6px 0;
+  }
+
+  .row {
+    z-index: 2;
+    margin: 0 -1px;
+    border: solid $white;
+    border-width: 0 15px;
+
+    @include media('<tablet') {
+      border-width: 0;
+      margin: 0 -6px;
+    }
+
+    [class*="col-"] {
+      padding: 0;
+      border: 15px solid $white;
+      position: static;
+
+      @include media('<tablet') {
+        border-width: 6px;
+      }
+    }
+
+    .column-holder {
+
+      &.popup-active {
+
+        .popup-block {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .frame {
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+
+        >a {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          color: #bdb37e;
+
+          &:hover,
+          &:focus {
+            color: $white;
+
+            .num {
+              border-color: $white;
+            }
+          }
+        }
+
+        .tb {
+          display: table;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+        }
+
+        .tc {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        .num {
+          font: 150px/0.7 $magnel-font;
+          display: inline-block;
+          vertical-align: top;
+          min-width: 114px;
+          border-bottom: 2px solid #bdb37e;
+          padding-bottom: 17px;
+          margin-bottom: 13px;
+          transition: border-color 0.3s linear;
+
+          @include media('<widescreen') {
+            font-size: 78px;
+            line-height: 0.9;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+            min-width: 90px;
+          }
+
+          @include media('<tablet') {
+            min-width: 50px;
+            font-size: 55px;
+          }
+        }
+
+        .icon-play {
+          font-size: 32px;
+
+          @include media('<tablet') {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .popup-block {
+    @extend %clearfix;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ebdcb3;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s linear, background 0.3s linear, visibility 0.3s linear;
+    z-index: 100;
+    display: block !important;
+    z-index: 9998;
+
+    .popup-opener {
+      position: absolute;
+      right: 42px;
+      top: 42px;
+      z-index: 9999;
+      font-size: 30px;
+      color: #828f55;
+
+      @include media('<large-desktop') {
+        top: 20px;
+      }
+
+      @include media('<tablet') {
+        right: 38px;
+        top: 14px;
+        color: $white;
+      }
+
+      &:hover,
+      &:focus {
+        color:  darken(#828f55, 10%);
+
+        @include media('<tablet') {
+          color: $crete;
+        }
+      }
+    }
+
+    .popup-container {
+      display: flex;
+      padding: 0 35px;
+
+      @include media('<desktop') {
+        display: block;
+        padding: 70px 25px 30px;
+      }
+
+      @include media('<tablet') {
+        padding: 0;
+      }
+
+      .video-wrap {
+        width: 63%;
+        display: flex;
+
+        @include media('<desktop') {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .video-frame {
+          width: 100%;
+
+          @include media('>=desktop') {
+            display: flex;
+          }
+
+          .fluid-width-video-wrapper {
+
+            @include media('>=desktop') {
+              padding: 0 !important;
+              display: flex;
+            }
+          }
+        }
+      }
+
+      .content-holder {
+        @include v-align;
+        float: right;
+        height: 100%;
+        width: 37%;
+        text-align: center;
+        padding: 65px 0 65px 48px;
+
+        @include media('<desktop') {
+          float: none;
+          width: 100%;
+          padding: 40px 0;
+          height: auto;
+        }
+
+        @include media('<tablet') {
+          padding: 16px 10px;
+        }
+
+        .content-wrap {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
